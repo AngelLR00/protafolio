@@ -1,3 +1,43 @@
+/*
+ * Archivo: ./css/style.css
+ */
+
+/* * 1. Define un color de fondo ligeramente diferente para la navbar
+ * para que contraste con el fondo de la página (#1A1D31).
+ */
+.navbar.bg-dark {
+    /* Color de fondo que contrasta, por ejemplo, #22263F */
+    background-color: #22263F !important; 
+    
+    /* Opcional: Añade una sombra sutil para darle profundidad */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* * 2. Mejorar el estado activo/hover de los enlaces.
+ * Esto hace que los enlaces se sientan más interactivos.
+ */
+
+/* Estilo para los enlaces normales (usando la clase de Bootstrap .text-light) */
+.navbar-dark .navbar-nav .nav-link.text-light {
+    color: #bdbdcf !important; /* Un gris claro para el texto normal */
+}
+
+/* Estilo para el enlace ACTIVO (la página en la que estás, 'Dashboard' en el ejemplo) */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.text-white {
+    color: #FFFFFF !important; /* Texto blanco puro para resaltarlo */
+    /* Puedes añadir un fondo sutil al activo, similar al de Tailwind */
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo gris claro semitransparente */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilo al pasar el ratón (HOVER) */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo un poco más visible al hacer hover */
+    border-radius: 4px;
+}
+/*navar*/
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -6,6 +46,127 @@ body{
     color: #2e2b2b;
 
 }
+
+/*carta mobible*/
+
+/* Estilos generales de la tarjeta */
+.card2 {
+  width: 300px;
+  height: 450px; 
+  background: rgb(103, 225, 255);
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  font-size: 16px; 
+  font-weight: 400;
+  overflow: hidden; 
+  color: #333; 
+  font-family: sans-serif;
+  position: relative; /* Asegura que el contenido se posicione bien */
+}
+
+/* Efecto Hover */
+.card2:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.05); 
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  background: rgb(103, 151, 255);
+}
+
+/* --- Contenido de la Primera Cara --- */
+.card2-first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column; /* Para apilar el texto verticalmente */
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+  padding: 20px; 
+  box-sizing: border-box;
+  text-align: center; 
+}
+
+.card2:hover .card2-first-content {
+  height: 0px;
+  opacity: 0;
+  padding: 0; 
+  overflow: hidden; /* Importante para que desaparezca bien */
+}
+
+/* --- Contenido de la Segunda Cara --- */
+.card2-second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card2:hover .card2-second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.2rem; 
+  transform: rotate(0deg);
+}
+
+/* --- Estilos de Texto --- */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card2 h1 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.description {
+    font-size: 0.9rem; /* Un poco más pequeño para que quepa bien */
+    line-height: 1.4;
+}
+
+.matricula {
+  font-weight: 800;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.gradient-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Estilo opcional para la imagen de la derecha */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px; /* Para que mida similar a la carta */
+    object-fit: cover;
+}
+
+/*carta movible fin*/
 
 section{
     padding: 2rem;
@@ -314,5 +475,6 @@ section{
        y el texto se quede abajo, descomenta la siguiente línea: */
     /* margin-bottom: auto; */
 }
+
 
 
