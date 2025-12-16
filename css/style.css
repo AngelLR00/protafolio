@@ -1,0 +1,318 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1A1D31;
+    color: #2e2b2b;
+
+}
+
+section{
+    padding: 2rem;
+
+}
+.bellaco{
+    background-color: #1A1D31;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.ultimo{
+    background-color: #1A1D31;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.sobre_mi{
+    background-color: #2F314F;
+    color: #F6F6F7;
+}
+.name_1{
+    background-color:#1A1D31;
+    color: #F6F6F7;
+}
+
+.social-fixed-card {
+    /* ✨ Propiedades para FIJAR el elemento a la ventana del navegador ✨ */
+    position: fixed;
+    bottom: 20px; /* Distancia del borde inferior */
+    left: 20px;  /* Distancia del borde derecho */
+    z-index: 9999; /* Asegura que esté por encima de cualquier otro elemento */
+    /* ----------------------------------------------------------------- */
+
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* targuetas de enmedio */ 
+/* Reiniciamos bordes y fondos de Bootstrap para que luzca el efecto */
+.card {
+  background: #07182E; /* Fondo base */
+  border: none; /* Quitamos el borde gris de Bootstrap */
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 100%; /* Para que todas las tarjetas tengan la misma altura en la fila */
+  /* Centrado opcional si el contenido es poco */
+  display: flex;
+  flex-direction: column; 
+}
+
+/* El elemento que gira (el gradiente de colores) */
+.card::before {
+  content: '';
+  position: absolute;
+  width: 150%; /* Más grande que la tarjeta para cubrir al girar */
+  height: 150%; 
+  top: -25%; /* Centramos el gradiente grande */
+  left: -25%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+  z-index: 0; /* Al fondo */
+}
+
+/* La animación de giro */
+@keyframes rotBGimg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* El fondo oscuro interno (lo que tapa el centro del gradiente) */
+.card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  inset: 5px; /* Grosor del borde brillante */
+  border-radius: 15px; /* Un poco menos que el padre */
+  z-index: 1; /* Encima del gradiente, debajo del contenido */
+}
+
+/* IMPORTANTE: El contenido debe estar encima de todo */
+.card-img-top, 
+.card-body {
+  position: relative;
+  z-index: 2; /* Encima del ::after */
+}
+
+/* Ajustes visuales para el contenido */
+.card-body {
+  background: transparent;
+}
+
+.card-title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Ajuste opcional para la imagen para que encaje en el diseño redondeado */
+.card-img-top {
+  width: calc(100% - 10px); /* Restamos el inset */
+  margin: 5px auto 0; /* Centramos y bajamos para respetar el borde */
+  border-radius: 15px 15px 0 0; /* Redondeamos solo arriba */
+  object-fit: contain; /* Para que el logo no se deforme */
+  max-height: 150px; /* Control de altura de logos */
+  padding: 1rem; /* Un poco de aire para los logos */
+}
+
+
+/* targuetas de enmedio */
+
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-img-top {
+    /* Establece una altura fija o máxima para todas las imágenes */
+    height: 150px; /* Ajusta esta altura según tus necesidades */
+    
+    /* Centra la imagen y asegura que cubra el área sin distorsión */
+    object-fit: contain; /* 'contain' hace que la imagen se escale para encajar sin recortarse */
+    
+    /* Agrega un poco de padding vertical para el espacio dentro de la tarjeta */
+    padding: 15px 0;
+}
+
+
+/* From Uiverse.io by Pravins01 */ 
+.cardts { /* ¡Selector cambiado de .card a .cardts! */
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.cardts::before { /* ¡Selector cambiado! */
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardts::after { /* ¡Selector cambiado! */
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+/* Nota: Aquí también cambié el selector para que apunte solo a los párrafos dentro de .cardts */
+.cardts p:not(.heading) { /* ¡Selector cambiado! */
+  font-size: 14px;
+}
+
+.cardts p:last-child { /* ¡Selector cambiado! */
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.cardts:hover::after { /* ¡Selector cambiado! */
+  filter: blur(30px);
+}
+
+.cardts:hover::before { /* ¡Selector cambiado! */
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+
+
+/* Importar la fuente Montserrat desde Google Fonts si no la tienes ya */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
+/* Estilo para aplicar el degradado al texto */
+.gradient-title {
+    /* Fuente y peso para el título */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; 
+    font-size: 2.5rem; 
+    
+    /* 1. Definir el degradado como fondo */
+    background: linear-gradient(90deg, #e81cff 0%, #40c9ff 100%);
+    
+    /* 2. Cortar el fondo para que solo se vea a través del texto */
+    -webkit-background-clip: text; 
+    background-clip: text;
+    
+    /* 3. Hacer que el texto sea transparente para ver el fondo */
+    -webkit-text-fill-color: transparent; 
+    text-fill-color: transparent;
+    
+    /* PROPIEDADES AGREGADAS PARA CENTRAR Y DAR ESPACIO */
+    
+    /* Centra el texto dentro del <h2> */
+    text-align: center;
+    
+    /* Agrega margen en la parte inferior para separarlo de las tarjetas */
+    margin-bottom: 30px; /* Puedes ajustar este valor (30px) según lo necesites */
+    
+    /* Asegura que el <h2> ocupe todo el ancho para que text-align: center funcione */
+    display: block; 
+}
+
+/* Estilo para la imagen pequeña dentro de la tarjeta */
+.card-icon {
+    width: 150px; /* Ajusta este valor para hacerla más grande o pequeña */
+    height: 150px;
+    object-fit: contain; /* Mantiene la proporción del logo */
+    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+    padding: 15px 0;
+    /* Opcional: si quieres que la imagen se vaya hasta arriba de la tarjeta
+       y el texto se quede abajo, descomenta la siguiente línea: */
+    /* margin-bottom: auto; */
+}
+
+
